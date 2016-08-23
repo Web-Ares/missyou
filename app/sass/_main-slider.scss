@@ -1,0 +1,206 @@
+.main-slider {
+  position: relative;
+  height: 500px;
+  padding: 120px 0 0;
+  background: #f0f0f8;
+
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    text-align: center;
+    @include flexbox();
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    @include align-items(center);
+  }
+  .swiper-pagination  {
+   display: none;
+  }
+}
+.main-slider__slide {
+  @include flexbox();
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include justify-content(center);
+  @include align-items(center);
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .btn {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  img {
+    max-width: 300px;
+    height: auto;
+  }
+
+}
+@media (min-width: $tablet-landscape) {
+
+  .main-slider {
+    height: 700px;
+
+    .swiper-pagination  {
+      display: block;
+      width: auto;
+      right: 59px;
+      left: auto;
+      bottom: 20px;
+      top: auto;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+    .main-slider__pic {
+      text-align: center;
+    }
+    .swiper-pagination__text {
+      text-align: right;
+
+      >span {
+        position: relative;
+        display: block;
+        padding: 0 53px 0 0;
+        margin: 0 0 1px;
+        font-size: 17px;
+        line-height: 17px;
+        color: #0a0a16;
+        @include main-font5();
+
+        &:before,
+        &:after {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          width: 10px;
+          height: 11px;
+          background: url("../img/pagination-triangle.png") no-repeat;
+          background-size: contain;
+          content: '';
+          -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+          -webkit-transition: opacity 0.3s linear 0.3s, visibility 0.3s linear 0.3s;
+          transition: opacity 0.3s linear 0.3s, visibility 0.3s linear 0.3s;
+        }
+        &:before {
+          opacity: 0;
+          visibility: hidden;
+          z-index: 2;
+          background: url("../img/pagination-triangle-active.png") no-repeat;
+          background-size: contain;
+        }
+        &.active {
+
+          &:before {
+            opacity: 1;
+            visibility: visible;
+            -webkit-transform: translateY(-50%) rotate(360deg) translateX(-28px);
+            transform: translateY(-50%) rotate(360deg) translateX(-28px);
+          }
+          &:after {
+            width: 28px;
+            height: 3px;
+            background: #e7bd6d;
+          }
+          >span {
+            opacity: 1;
+            visibility: visible;
+          }
+
+        }
+
+        >span {
+          opacity: 0;
+          visibility: hidden;
+          -webkit-transition: opacity 0.3s 0.3s, visibility 0.3s 0.3s;
+          transition: opacity 0.3s 0.3s, visibility 0.3s 0.3s;
+        }
+      }
+    }
+
+  }
+  .main-slider__slide {
+
+    .btn {
+      position: absolute;
+      top: 41.5%;
+      bottom: auto;
+      left: 54%;
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    img {
+      max-width: 90%;
+    }
+
+    &.main-slider__slide_2 {
+      .btn {
+        top: 42%;
+        left: 59.7%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
+
+    }
+    &.main-slider__slide_3 {
+      .btn {
+        top: auto;
+        left: 50%;
+        bottom: 26.7%;
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+      }
+
+    }
+  }
+
+}
+@media (min-width: $desktop) {
+
+  .main-slider {
+    padding: 185px 0 0;
+    height: 960px;
+  }
+
+}
+@media (min-width: $desktop-wide) {
+
+  .main-slider__slide {
+    padding: 0 83px 6.4% 0;
+
+    img {
+      max-width: 100%;
+    }
+    &.main-slider__slide_2 {
+      padding: 0 0 5.2% 0;
+    }
+    &.main-slider__slide_3 {
+      padding: 0 0 7% 41px;
+    }
+
+  }
+
+}
+@media (min-width: $desktop-full) {
+
+  .main-slider {
+
+    .swiper-pagination  {
+      bottom: auto;
+      top: 38.2%;
+
+    }
+
+  }
+
+
+}
+
+

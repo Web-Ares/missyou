@@ -1,0 +1,148 @@
+.collection {
+  position: relative;
+  z-index: 2;
+  padding: 60px 0;
+  background: #f0f0f8;
+  text-align: center;
+}
+.collection_2 {
+  background: #fff;
+}
+.collection__inner {
+
+}
+.collection__previews {
+  padding: 60px 0 0;
+}
+.collection__previews-item {
+  overflow: hidden;
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 210px;
+  margin: 0 auto 40px;
+  background: #fff;
+  box-shadow: 0 2px 20px -4px rgba(0,0,0,0.2);
+  text-align: center;
+
+  &:after {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(231, 189, 109, 0.4);
+    content: '';
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+  }
+  &:hover {
+
+    &:after {
+      opacity: 1;
+    }
+
+  }
+
+  &.collection__previews-item_big {
+    height: 460px;
+
+    .collection__previews-name {
+      font-size: 36px;
+      line-height: 42px;
+    }
+    .collection__previews-pic {
+      height: 79.5%;
+    }
+
+  }
+
+}
+.collection__previews-pic {
+  height: 70%;
+
+  img {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+}
+.collection__previews-name {
+  display: block;
+  position: relative;
+  z-index: 1;
+  font-size: 24px;
+  line-height: 30px;
+  color: #0a0a16;
+  @include main-font3();
+}
+
+@media (min-width: $tablet-landscape) {
+
+  .collection {
+    padding: 39px 0 0;
+    text-align: left;
+
+    .btn {
+      min-width: 301px;
+    }
+    .site__title {
+      margin: 0 0 30px;
+    }
+
+  }
+  .collection__inner {
+    @include flexbox();
+    @include flex-wrap(wrap);
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(space-between);
+
+    >div {
+      width: 53.5%;
+      padding: 0 0 0 7px;
+
+      &:first-child {
+        width: 44%;
+        padding: 0 0 49px;
+      }
+
+    }
+
+  }
+  .collection__previews {
+    @include flexbox();
+    @include flex-wrap(wrap);
+    @include flex-direction(row);
+    @include align-items(flex-start);
+    @include justify-content(space-between);
+    padding: 0;
+
+    >div {
+      width: 47.3%;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+    }
+
+  }
+
+}
+@media (min-width: $desktop) {
+
+  .animate-block {
+
+    .collection__previews-item {
+      opacity: 0;
+      -webkit-transition: opacity 0.3s;
+      transition: opacity 0.3s;
+    }
+
+  }
+
+}

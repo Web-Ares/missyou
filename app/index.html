@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+
+    <title>Title</title>
+
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <style>
+        .preloader{
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 10;
+            background: #fff;
+        }
+        .preloader > img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 3;
+            -webkit-transition: opacity 500ms ease-in-out;
+            transition: opacity 500ms ease-in-out;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .preloader_loaded > img,
+        .preloader_loaded > div{
+            opacity: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- preloader -->
+    <div class="preloader">
+        <div></div>
+        <img src="img/logo.png" width="277" height="69" alt="">
+    </div>
+    <!-- /preloader -->
+
+    <!-- site -->
+    <div class="site">
+
+        <!-- site__header -->
+        <header class="site__header">
+
+            <!-- site__header-inner -->
+            <div class="site__header-inner">
+
+                <!-- logo -->
+                <h1 class="logo">
+                    <img src="img/logo.png" width="277" height="69" alt="">
+                </h1>
+                <!-- logo -->
+
+                <!-- site__header-btn -->
+                <button class="site__header-btn">
+                    <span></span>
+                </button>
+                <!-- /site__header-btn -->
+
+                <!-- site__menu -->
+                <nav class="site__menu">
+                    <a href="#">Collection</a>
+                    <a href="#">About</a>
+                    <a href="#">Boutiques</a>
+                    <a href="#">Contact</a>
+                </nav>
+                <!-- /site__menu -->
+
+            </div>
+            <!-- /site__header-inner -->
+
+        </header>
+        <!-- /site__header -->
+
+        <!-- site__content -->
+        <div class="site__content">
+
+            <!-- main-slider -->
+            <div class="main-slider">
+
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" data-name="Pivoine">
+
+                            <!-- main-slider__slide -->
+                            <div class="main-slider__slide">
+
+                                <div class="main-slider__pic">
+                                    <img src="pic/main-slide1.jpg" width="642" height="620" alt="">
+                                </div>
+
+                                <a href="#" class="btn"><span>View the collection</span></a>
+                            </div>
+                            <!-- /main-slider__slide -->
+
+                        </div>
+                        <div class="swiper-slide" data-name="Liaison">
+
+                            <!-- main-slider__slide -->
+                            <div class="main-slider__slide main-slider__slide_2">
+
+                                <div class="main-slider__pic">
+                                    <img src="pic/main-slide2.jpg" width="1286" height="552" alt="">
+                                </div>
+
+                                <a href="#" class="btn"><span>View the collection</span></a>
+                            </div>
+                            <!-- /main-slider__slide -->
+
+                        </div>
+                        <div class="swiper-slide" data-name="Edelweiss">
+
+                            <!-- main-slider__slide -->
+                            <div class="main-slider__slide main-slider__slide_3">
+
+                                <div class="main-slider__pic">
+                                    <img src="pic/main-slide3.jpg" width="691" height="392" alt="">
+                                </div>
+
+                                <a href="#" class="btn"><span>View the collection</span></a>
+                            </div>
+                            <!-- /main-slider__slide -->
+
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+
+            </div>
+            <!-- /main-slider -->
+
+            <!-- brand -->
+            <section class="brand animate-block">
+
+                <!-- site__svg -->
+                <div class="site__svg">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0%" y="0%" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" xml:space="preserve">
+                        <path class="path" vector-effect="non-scaling-stroke" width="100%" height="100%" fill="none" stroke="#e7bd6d" stroke-width="4" stroke-miterlimit="10" d="M100,40 100,0 0,0 0,100 100,100"/>
+                    </svg>
+                </div>
+                <!-- /site__svg -->
+
+                <!-- brand__pic -->
+                <div class="brand__pic">
+                    <img src="pic/brand-hands.jpg" width="960" height="660" alt="">
+                </div>
+                <!-- /brand__pic -->
+
+                <!-- site__content-inner -->
+                <div class="site__content-inner">
+
+                    <!-- brand__description -->
+                    <div class="brand__label">
+                        <h2 class="site__title">La marque</h2>
+                        <p>La griffe joaillière, Miss You, réinvente avec ses bijoux précieux et contemporains la façon de dire à ceux qu’on aime combien on les aime. Quand tu n’es pas là ou que je suis loin, mon amour, tu me manques … ma fille, tu me manques… ou mon pays, tu me manques !</p>
+                        <a href="#" class="btn btn_3"><span>A propos de nous</span></a>
+                    </div>
+                    <!-- /brand__description -->
+
+                    <!-- /brand__description -->
+                    <div class="brand__designer">
+                        <p>La designer de la marque Miss You, Zhao Jie, Chinoise d’origine et Belge d’adoption, a su canaliser ses multiples sources d’inspiration avec un indéniable talent. De ses racines, elle garde un sens aigu des traditions et une certaine poésie. En Belgique, elle a appris les secrets de fabrication de la belle joaillerie, le respect des pierres,
+                            les mystères de l’or.</p>
+                    </div>
+                    <!-- /brand__description -->
+
+                </div>
+                <!-- /site__content-inner -->
+
+            </section>
+            <!-- /brand -->
+
+            <!-- collection -->
+            <section class="collection animate-block">
+
+                <!-- site__content-inner -->
+                <div class="site__content-inner">
+
+                    <!-- collection__inner -->
+                    <div class="collection__inner">
+                        <div>
+                            <h2 class="site__title">La collection</h2>
+                            <a href="#" class="btn btn_3"><span>VOIR TOUTE LA COLLECTION</span></a>
+                        </div>
+                        <div>
+
+                            <!-- collection__previews -->
+                            <div class="collection__previews">
+                                <div>
+
+                                    <!-- collection__previews-item -->
+                                    <a href="#" class="collection__previews-item">
+
+                                        <!-- collection__previews-pic -->
+                                        <div class="collection__previews-pic">
+                                            <img src="pic/collection1.jpg" width="134" height="129" alt="">
+                                        </div>
+                                        <!-- /collection__previews-pic -->
+
+                                        <span class="collection__previews-name">Liaison</span>
+
+                                    </a>
+                                    <!-- /collection__previews-item -->
+
+                                    <!-- collection__previews-item -->
+                                    <a href="#" class="collection__previews-item collection__previews-item_big">
+
+                                        <!-- collection__previews-pic -->
+                                        <div class="collection__previews-pic">
+                                            <img src="pic/collection2.jpg" width="320" height="318" alt="">
+                                        </div>
+                                        <!-- /collection__previews-pic -->
+
+                                        <span class="collection__previews-name">La Rosé</span>
+
+                                    </a>
+                                    <!-- /collection__previews-item -->
+
+                                </div>
+                                <div>
+
+                                    <!-- collection__previews-item -->
+                                    <a href="#" class="collection__previews-item collection__previews-item_big">
+
+                                        <!-- collection__previews-pic -->
+                                        <div class="collection__previews-pic">
+                                            <img src="pic/collection3.jpg" width="202" height="300" alt="">
+                                        </div>
+                                        <!-- /collection__previews-pic -->
+
+                                        <span class="collection__previews-name">Pivoine</span>
+
+                                    </a>
+                                    <!-- /collection__previews-item -->
+
+                                    <!-- collection__previews-item -->
+                                    <a href="#" class="collection__previews-item">
+
+                                        <!-- collection__previews-pic -->
+                                        <div class="collection__previews-pic">
+                                            <img src="pic/collection4.jpg" width="113" height="97" alt="">
+                                        </div>
+                                        <!-- /collection__previews-pic -->
+
+                                        <span class="collection__previews-name">Edelweiss</span>
+
+                                    </a>
+                                    <!-- /collection__previews-item -->
+
+                                </div>
+                            </div>
+                            <!-- collection__previews -->
+
+                        </div>
+                    </div>
+                    <!-- /collection__inner -->
+
+                </div>
+                <!-- /site__content-inner -->
+
+            </section>
+            <!-- /collection -->
+
+        </div>
+        <!-- /site__content -->
+
+        <!-- site__footer -->
+        <footer class="site__footer">
+
+            <!-- site__footer-layout -->
+            <div class="site__footer-layout">
+
+                <!-- site__footer-logo -->
+                <a href="#" class="site__footer-logo">
+                    <img src="img/logo.png" width="553" height="137" alt="">
+                </a>
+                <!-- /site__footer-logo -->
+
+                <!-- site__footer-items -->
+                <div class="site__footer-items">
+
+                    <div>
+
+                        <h2 class="site__footer-title">Headquarters</h2>
+
+                        <!-- site__footer-address -->
+                        <div class="site__footer-address">
+
+                            <address>
+                                Diamond Plaza building
+                                Hovenierstraat 55 Bte 86,
+                                2018 Antwerp, Belgium
+                            </address>
+
+                            <a href="tel:+3232943996" class="site__footer-phone">+32 3 294 3996</a>
+
+                        </div>
+                        <!-- /site__footer-address -->
+
+                    </div>
+                    <div>
+
+                        <h2 class="site__footer-title">Boutiques</h2>
+
+                        <!-- site__footer-discover -->
+                        <div class="site__footer-discover">
+                            Discover our boutiques from
+                            Belgium and Netherlands.
+                        </div>
+                        <!-- /site__footer-discover -->
+
+                        <a href="#" class="btn btn_2"><span>shops</span></a>
+
+                    </div>
+                    <div>
+
+                        <h2 class="site__footer-title">Sitemap</h2>
+
+                        <!-- site__footer-menu -->
+                        <ul class="site__footer-menu">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">Collection</a>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Jewelers</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                        <!-- /site__footer-menu -->
+
+                    </div>
+
+                </div>
+                <!-- /site__footer-items -->
+
+            </div>
+            <!-- /site__footer-layout -->
+
+        </footer>
+        <!-- /site__footer -->
+
+    </div>
+    <!-- /site -->
+
+    <script src="js/vendors/jquery-2.2.1.min.js"></script>
+    <script src="js/vendors/swiper.jquery.min.js"></script>
+    <script src="js/main.min.js"></script>
+    <script src="js/index.min.js"></script>
+</body>
+</html>

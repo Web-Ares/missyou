@@ -1,0 +1,28 @@
+.hero {
+  @include flexbox();
+  @include flex-wrap(wrap);
+  @include justify-content(row);
+  @include align-items(center);
+  @include justify-content(flex-start);
+  position: relative;
+  text-align: center;
+  padding-top: 140px;
+  padding-bottom: 20px;
+  min-height: 26.5vw;
+  margin: 0 0 33px;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: auto 110%;
+}
+
+@media (min-width: $desktop) {
+  .hero {
+    padding-top: 205px;
+  }
+}
+
+@media (max-width: $desktop) {
+  .hero {
+    background: none !important;
+  }
+}
