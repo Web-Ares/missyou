@@ -7,6 +7,8 @@
   height: 50px;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
 
   img {
     display: block;
@@ -15,14 +17,40 @@
   }
 
 }
+
+.site__header_fixed {
+
+  .logo {
+
+    -webkit-transform: translateY(-50%) scale(0.7);
+    transform: translateY(-50%) scale(0.7);
+
+  }
+
+}
+
 @media (min-width: $tablet-portrait) {
+
   .logo {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
+
+  .site__header_fixed {
+
+    .logo {
+
+      -webkit-transform: translateY(-50%) scale(0.7);
+      transform: translateY(-50%) scale(0.7);
+
+    }
+
+  }
+
 }
 @media (min-width: $desktop) {
+
   .logo {
     top: 50%;
     left: 20px;
@@ -31,5 +59,17 @@
     -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
   }
+
+  .site__header_fixed {
+
+    .logo {
+
+      -webkit-transform: translateY(-50%) scale(0.7);
+      transform: translateY(-50%) scale(0.7);
+
+    }
+
+  }
+
 }
 

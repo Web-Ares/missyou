@@ -1,38 +1,143 @@
 ( function(){
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-        loop: true,
-        paginationType: 'custom',
-        paginationCustomRender: function( swiper, current, total ) {
 
-            var names = [];
+    $( function() {
+        'use strict';
 
-            $( '.swiper-wrapper .swiper-slide' ).each( function(i) {
+        $.each( $('.main-slider'), function () {
 
-                names.push( $(this).data('name') );
+            new Slider( $(this) );
 
-            } );
+        } );
 
-            var text = '<div class="swiper-pagination__text">';
+    } );
 
-            for ( var i = 1; i <= total; i++ ) {
+    var Slider = function (obj) {
 
-                if ( current == i ) {
+        //private properties
+        var _self = this,
+            _obj = obj,
+            _slides = _obj.find( '.main-slider__slide'),
+            _window = $( window),
+            _swiper;
 
-                    text += '<span class="active"><span>' + names[i] + '</span></span>';
+        //private methods
+        var _onEvents = function () {
 
-                } else {
 
-                    text += '<span><span>' + names[i] + '</span></span>';
+                _window.on( {
+                    resize: function() {
 
-                }
+                        if( _window.height() >= 850 ) {
 
-            }
+                            _resetHeightImg();
 
-            text += '</span>';
+                        } else {
 
-            return text;
-        }
-    });
+                            _setHeightImg();
+
+                        }
+
+
+                    },
+                    load: function() {
+
+                        if( _window.height() < 850 ) {
+
+                            _setHeightImg();
+
+                        }
+
+                    }
+                } )
+
+            },
+            _initSwiper = function() {
+
+                _swiper = new Swiper( _obj.find( '.swiper-container' ), {
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true,
+                    loop: true,
+                    autoplay: 5000,
+                    autoplayDisableOnInteraction: false,
+                    effect: 'fade',
+                    parallax: true,
+                    paginationType: 'custom',
+                    paginationCustomRender: function( swiper, current, total ) {
+
+                        var names = [];
+
+                        $( '.swiper-wrapper .swiper-slide' ).each( function(i) {
+
+                            names.push( $(this).data('name') );
+
+                        } );
+
+                        var text = '<div class="swiper-pagination__text">';
+
+                        for ( var i = 1; i <= total; i++ ) {
+
+                            if ( current == i ) {
+
+                                text += '<span class="active"><span>' + names[i] + '</span></span>';
+
+                            } else {
+
+                                text += '<span><span>' + names[i] + '</span></span>';
+
+                            }
+
+                        }
+
+                        text += '</div>';
+
+                        return text;
+
+                    }
+                } );
+
+                _slides = _obj.find( '.main-slider__slide');
+
+            },
+            _resetHeightImg = function() {
+
+                _slides.each( function() {
+                    var curSlide = $(this),
+                        curSlideImg = curSlide.find('.main-slider__pic img');
+
+                    curSlideImg.attr( 'style', '' );
+
+                } );
+
+            },
+            _setHeightImg = function() {
+
+                _slides.each( function() {
+                    var curSlide = $(this),
+                        curSlideImg = curSlide.find('.main-slider__pic img');
+
+                    if( curSlideImg.height() >= curSlide.height() ) {
+
+                        curSlideImg.css( {
+                            'height': curSlide.height()*0.9,
+                            'width': 'auto'
+                        } );
+
+                    }
+
+                } );
+
+            },
+            _init = function () {
+
+                _obj[0].obj = _self;
+                _onEvents();
+                _initSwiper();
+
+            };
+
+
+        _init();
+    };
+
 } )();
+

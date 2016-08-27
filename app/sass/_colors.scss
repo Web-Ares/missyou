@@ -1,28 +1,19 @@
-/*---------- popup ----------*/
-$popup-back: rgba( 0, 0, 0, .5 );
-$popup-close-back: rgba( 255, 255, 255, 1 );
-/*---------- /popup ---------*/
+/*---------- about-us ----------*/
+$about-us-color: #000000;
+$about-us-text2-color: #818193;
+/*---------- /about-us ----------*/
 
-/*---------- websters-select ----------*/
-$websters-select-border: #000;
-$websters-select-popup-back: #fff;
-$websters-select-popup-item-active-color: #fff;
-$websters-select-popup-item-active-back: #f00;
-/*---------- /websters-select ---------*/
-
-/*---------- nice-radio ----------*/
-$nice-radio-after-color: #000;
-$nice-radio-color: #000;
-/*---------- /nice-radio ---------*/
-
-/*---------- nice-checkbox ----------*/
-$nice-checkbox-after-color: #000;
-$nice-checkbox-color: #000;
-/*---------- /nice-checkbox ---------*/
+/*---------- brand ----------*/
+$brand-labels-back: #fff;
+/*---------- /brand ----------*/
 
 /*---------- btn ----------*/
-$btn-back: #ff0;
-$btn-back-hover: #ffa;
+$btn-back: #f0f0f8;
+$btn-border-color: #e7bd6d;
+
+$btn-back-hover: #cd972f;
+$btn-border-color: #e7bd6d;
+
 $btn-back-active: #000;
 $btn-color: #0a0a16;
 $btn-color-active: #ff0;

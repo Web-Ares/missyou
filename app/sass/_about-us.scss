@@ -1,0 +1,222 @@
+.about-us {
+  position: relative;
+  color: $about-us-color;
+}
+.about-us__description {
+  position: relative;
+  margin: 0 0 30px;
+}
+.about-us__pic {
+  width: 300px;
+  height: 232px;
+  margin: 0 auto 30px;
+
+  svg {
+    width: 300px;
+    height: 232px;
+
+    g {
+      width: 100%;
+      height: auto;
+    }
+
+  }
+
+}
+.about-us__decor {
+  display: none;
+}
+
+@media (min-width: $tablet-portrait) {
+
+  .about-us__content {
+
+  }
+  .about-us__description {
+    @include flexbox();
+    @include flex-wrap(wrap);
+    @include flex-direction(row);
+    @include align-items(center);
+    @include justify-content(space-between);
+    padding-bottom: 35px;
+
+    >div:not(.about-us__decor) {
+      width: 60%;
+      padding: 0 0 0 20px;
+
+      &:first-child {
+        width: 40%;
+        padding: 0 20px 0 0;
+      }
+
+    }
+
+    &:nth-child(even) {
+      @include flex-direction(row-reverse);
+
+      >div:not(.about-us__decor) {
+        width: 60%;
+        padding: 0 20px 0 0;
+
+        &:first-child {
+          width: 40%;
+          padding: 0 0 0 20px;
+        }
+
+      }
+      .about-us__decor {
+        right: 35%;
+        left: auto;
+        float: right;
+        transform: scale(-1,1);
+      }
+
+    }
+
+  }
+  .about-us__pic {
+    margin: 0;
+  }
+  .about-us__text {
+    padding: 0 0 8px;
+  }
+  .about-us__decor {
+    overflow: hidden;
+    display: block;
+    position: absolute;
+    left: 35%;
+    bottom: -50px;
+    width: 340px !important;
+    padding: 0 !important;
+
+    img {
+      width: 340px;
+      height: auto;
+    }
+
+  }
+
+}
+@media (min-width: $desktop) {
+
+  .about-us__text_2 {
+    color: $about-us-text2-color;
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .about-us__pic {
+    width: 440px;
+    height: 372px;
+
+    svg {
+      width: 440px;
+      height: 372px;
+    }
+
+  }
+  .about-us__description {
+    padding-bottom: 67px;
+
+    >div:not(.about-us__decor) {
+      width: 56.3%;
+      padding: 0 0 0 40px;
+
+      &:first-child {
+        width: 37.5%;
+        padding: 0 40px 0 0;
+      }
+
+    }
+
+    &:nth-child(even) {
+
+      >div:not(.about-us__decor) {
+        width: 56.3%;
+        padding: 0 40px 0 0;
+
+        &:first-child {
+          width: 37.5%;
+          padding: 0 0 0 40px;
+        }
+
+      }
+
+      .about-us__decor {
+        right: 32%;
+        left: auto;
+        bottom: -109px;
+      }
+
+    }
+
+  }
+  .about-us__decor {
+    left: 32%;
+    bottom: -73px;
+    width: 461px !important;
+    padding: 0 !important;
+
+    img {
+      width: 461px;
+      height: auto;
+    }
+
+  }
+
+  .animate-block {
+
+    &.about-us__description {
+
+      >div:not(.about-us__decor) {
+        opacity: 0;
+        -webkit-transition: opacity 0.3s 0.3s;
+        transition: opacity 0.3s 0.3s;
+
+        &:first-child {
+          -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s;
+        }
+
+      }
+
+      &:nth-child(even) {
+
+        >div:not(.about-us__decor) {
+          -webkit-transition: opacity 0.3s;
+          transition: opacity 0.3s;
+
+
+          &:first-child {
+            -webkit-transition: opacity 0.3s 0.3s;
+            transition: opacity 0.3s 0.3s;
+          }
+
+        }
+
+      }
+
+    }
+    &.about-us__decor {
+      width: 0 !important;
+      -webkit-transition: width 1.5s;
+      transition: width 1.5s;
+    }
+
+  }
+  .animate-block_active {
+
+    &.about-us__description {
+
+      >div:not(.about-us__decor) {
+        opacity: 1;
+      }
+
+    }
+    &.about-us__decor {
+      width: 461px !important;
+    }
+
+  }
+
+}
+

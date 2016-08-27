@@ -25,18 +25,103 @@
         .preloader > img {
             position: absolute;
             left: 50%;
-            top: 50%;
+            top: 40%;
             z-index: 3;
             -webkit-transition: opacity 500ms ease-in-out;
             transition: opacity 500ms ease-in-out;
             -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
         }
-
         .preloader_loaded > img,
         .preloader_loaded > div{
             opacity: 0;
         }
+        .preloader__points {
+            overflow: hidden;
+            position: absolute;
+            top: 60%;
+            left: 50%;
+            margin-left: -35px;
+            height: 50px;
+            width: 70px;
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+        }
+        .preloader__points span {
+            overflow: hidden;
+            opacity: 1;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -8px 0 0 -8px;
+            width: 16px;
+            height: 16px;
+            background: #e7bd6d;
+            border: 2px solid white;
+            border-radius: 16px;
+            text-indent: -9999px;
+            -webkit-transform: translate3d(60px, 0, 0);
+            transform: translate3d(60px, 0, 0);
+        }
+        .preloader__points span:nth-child(1) {
+            -webkit-animation: google 1.75s ease-in-out infinite;
+            animation: google 1.75s ease-in-out infinite;
+        }
+        .preloader__points span:nth-child(2) {
+            -webkit-animation: google 1.75s ease-in-out infinite 0.3s;
+            animation: google 1.75s ease-in-out infinite 0.3s;
+        }
+        .preloader__points span:nth-child(3) {
+            -webkit-animation: google 1.75s ease-in-out infinite 0.6s;
+            animation: google 1.75s ease-in-out infinite 0.6s;
+        }
+
+        @-webkit-keyframes google {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(60px, 0, 0);
+                transform: translate3d(60px, 0, 0);
+            }
+            30% {
+                opacity: 1;
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            70% {
+                opacity: 1;
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                opacity: 0;
+                -webkit-transform: translate3d(-300px, 0, 0);
+                transform: translate3d(-300px, 0, 0);
+            }
+        }
+        @keyframes google {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(60px, 0, 0);
+                transform: translate3d(60px, 0, 0);
+            }
+            30% {
+                opacity: 1;
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            70% {
+                opacity: 1;
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                opacity: 0;
+                -webkit-transform: translate3d(-300px, 0, 0);
+                transform: translate3d(-300px, 0, 0);
+            }
+        }
+
     </style>
 
 </head>
@@ -44,7 +129,11 @@
 
     <!-- preloader -->
     <div class="preloader">
-        <div></div>
+        <div class='preloader__points'>
+            <span>.</span>
+            <span>.</span>
+            <span>.</span>
+        </div>
         <img src="img/logo.png" width="277" height="69" alt="">
     </div>
     <!-- /preloader -->
@@ -53,7 +142,7 @@
     <div class="site">
 
         <!-- site__header -->
-        <header class="site__header">
+        <header class="site__header animate-block">
 
             <!-- site__header-inner -->
             <div class="site__header-inner">
@@ -98,8 +187,8 @@
                             <!-- main-slider__slide -->
                             <div class="main-slider__slide">
 
-                                <div class="main-slider__pic">
-                                    <img src="pic/main-slide1.jpg" width="642" height="620" alt="">
+                                <div class="main-slider__pic" style="background-image: url('pic/main-slide1.jpg')">
+                                    <img src="pic/main-slide1.jpg" width="546" height="500" alt="">
                                 </div>
 
                                 <a href="#" class="btn"><span>View the collection</span></a>
@@ -112,7 +201,7 @@
                             <!-- main-slider__slide -->
                             <div class="main-slider__slide main-slider__slide_2">
 
-                                <div class="main-slider__pic">
+                                <div class="main-slider__pic" style="background-image: url('pic/main-slide2.jpg')">
                                     <img src="pic/main-slide2.jpg" width="1286" height="552" alt="">
                                 </div>
 
@@ -126,7 +215,7 @@
                             <!-- main-slider__slide -->
                             <div class="main-slider__slide main-slider__slide_3">
 
-                                <div class="main-slider__pic">
+                                <div class="main-slider__pic" style="background-image: url('pic/main-slide3.jpg')">
                                     <img src="pic/main-slide3.jpg" width="691" height="392" alt="">
                                 </div>
 
@@ -137,7 +226,9 @@
                         </div>
                     </div>
                     <!-- Add Pagination -->
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-pagination">
+
+                    </div>
                 </div>
 
             </div>

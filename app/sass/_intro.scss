@@ -1,0 +1,41 @@
+.intro {
+  @include flexbox();
+  @include flex-direction(row);
+  @include flex-wrap(wrap);
+  @include justify-content(center);
+  @include align-items(center);
+  position: relative;
+  height: 500px;
+  padding: 120px 0 40px;
+  background: #f0f0f8;
+  text-align: center;
+}
+
+@media (min-width: $tablet-landscape) {
+
+  .intro {
+    min-height: 600px;
+    height: 100vh;
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+  }
+
+}
+@media (min-width: $desktop) {
+
+  .intro {
+    padding: 185px 0 92px;
+    //height: 960px;
+  }
+
+}
+@media (max-width: $desktop) {
+
+  .intro {
+    background: #f0f0f8 !important;
+  }
+
+}
+
+
