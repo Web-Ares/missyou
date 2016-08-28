@@ -2,7 +2,7 @@
   position: relative;
   height: 500px;
   padding: 120px 0 40px;
-  background: #f0f0f8;
+  background: $main-slider-back;
   text-align: center;
 
   .swiper-container {
@@ -30,7 +30,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  background: #f0f0f8;
+  background: $main-slider-back;
 
   .btn {
     position: absolute;
@@ -93,7 +93,7 @@
         margin: 0 0 1px;
         font-size: 17px;
         line-height: 17px;
-        color: #0a0a16;
+        color: $swiper-pagination-text-color;
         @include main-font5();
         cursor: pointer;
 
@@ -130,7 +130,7 @@
           &:after {
             width: 28px;
             height: 3px;
-            background: #e7bd6d;
+            background: $swiper-pagination-text-after-back;
           }
           >span {
             opacity: 1;
@@ -233,7 +233,7 @@
 @media (max-width: $desktop) {
 
   .main-slider {
-    background: #f0f0f8 !important;
+    background: $main-slider-back !important;
   }
 
 }

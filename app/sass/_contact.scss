@@ -18,12 +18,12 @@
   @include main-font4();
   font-size: 20px;
   line-height: 30px;
-  color: #0a0a16;
+  color: $contact-info-color;
   text-align: center;
   letter-spacing: 2px;
 
   a {
-    color: #0a0a16;
+    color: $contact-info-color;
   }
 
   address {
@@ -32,7 +32,7 @@
     font-size: 16px;
     line-height: 26px;
     @include main-font1();
-    color: #818193;
+    color: $contact-info-address-color;
     letter-spacing: 0;
   }
 

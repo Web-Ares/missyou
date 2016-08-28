@@ -37,8 +37,23 @@
 
 
   //fonts
-  &__myriadpro-regular {
-    @include main-font1
+  &__avenir-lt-com-light {
+    @include main-font1();
+  }
+  &__avenir-lt-com-medium {
+    @include main-font2();
+  }
+  &__avenir-lt-com-heavy {
+    @include main-font6();
+  }
+  &__domaine-display-regular {
+    @include main-font4();
+  }
+  &__domaine-display-medium {
+    @include main-font3();
+  }
+  &__domaine-display-semibold {
+    @include main-font5();
   }
 
 }

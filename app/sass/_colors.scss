@@ -1,3 +1,21 @@
+/*---------- site ----------*/
+$site-color: #818193;
+$site-header-fixed-back: #fff;
+$site-menu-back: #fff;
+$site-menu-color: #0a0a16;
+$site-menu-color-hover: #d9b26a;
+$site-header-btn-back: #000;
+$site-header-btn-back-active: #6c6c6c;
+$site-footer-back: #ffffff;
+$site-footer-title-color: #0a0a16;
+$site-footer-phone-color: #e7bd6d;
+$site-footer-menu-color: #818193;
+$site-footer-menu-color-hover: #d9b26a;
+$site-title-color: #0a0a16;
+$site-title-color4: #010101;
+$site-index-dark-title-color: #fff;
+/*---------- /site ----------*/
+
 /*---------- about-us ----------*/
 $about-us-color: #000000;
 $about-us-text2-color: #818193;
@@ -5,21 +23,72 @@ $about-us-text2-color: #818193;
 
 /*---------- brand ----------*/
 $brand-labels-back: #fff;
+$brand-index-dark-back: #0a0a16;
 /*---------- /brand ----------*/
 
 /*---------- btn ----------*/
 $btn-back: #f0f0f8;
 $btn-border-color: #e7bd6d;
-
-$btn-back-hover: #cd972f;
-$btn-border-color: #e7bd6d;
-
-$btn-back-active: #000;
 $btn-color: #0a0a16;
-$btn-color-active: #ff0;
-
-$btn-2-back: #f00;
-$btn-2-back-hover: #f0a;
-$btn-2-back-active: #000;
-$btn-2-color-active: #f0a;
+$btn-back1: #f8ad1b;
+$btn-border-color1: #f8ad1b;
+$btn-color1: #fff;
+$btn-back-hover: #cd972f;
+$btn-border-color-hover: #cd972f;
+$btn-color-hover: #fff;
+$btn-back-active: #e7bd6d;
+$btn-border-color-active: #e7bd6d;
+$btn-back-hover5: #1b5ef8;
+$btn-border-color-hover5: #1b5ef8;
+$btn-color-hover5: #fff;
+$btn-back-active5: #1747b2;
+$btn-border-color-active5: #1747b2;
 /*---------- /btn ---------*/
+
+/*---------- collection ----------*/
+$collection-back: #f0f0f8;
+$collection-back2: #fff;
+$collection-previews-back: #f0f0f8;
+$collection-previews-item-back: #fff;
+$collection-previews-item-back2: rgba(231, 189, 109, 0.4);
+$collection-previews-item-shadow: rgba(0,0,0,0.3);
+$collection-previews-name-color: #0a0a16;
+/*---------- /collection ----------*/
+
+/*---------- collection-previews ----------*/
+$collection-previews-item-before-border-color: #000;
+$collection-previews-item-after-back: rgba(221, 141, 5, 0.51);
+/*---------- /collection-previews ----------*/
+
+/*---------- collection-single ----------*/
+$collection-single-products-back: #f0f0f8;
+$collection-single-product-back: #fff;
+$collection-single-product-border-color: #e7bd6d;
+$collection-single-product-shadow: rgba(0,0,0,0.1);
+$collection-single-product-title-color: #0a0a16;
+$collection-single-product-pic-back: #fff;
+$collection-single-product-text-color: #818193;
+$collection-single-product-description-back: #fff;
+$collection-single-product-description-shadow: rgba(0,0,0,0.1);
+/*---------- /collection-single ----------*/
+
+/*---------- contact ----------*/
+$contact-info-color: #0a0a16;
+$contact-info-address-color: #818193;
+/*---------- /contact ----------*/
+
+/*---------- intro ----------*/
+$intro-back: #f0f0f8;
+/*---------- /intro ----------*/
+
+/*---------- main-slider ----------*/
+$main-slider-back: #f0f0f8;
+$swiper-pagination-text-color: #0a0a16;
+$swiper-pagination-text-after-back: #e7bd6d;
+/*---------- /main-slider ----------*/
+
+/*---------- preloader ----------*/
+$preloader-back: #fff;
+$preloader-points-back: #e7bd6d;
+$preloader-points-border-color: #fff;
+/*---------- /preloader ----------*/

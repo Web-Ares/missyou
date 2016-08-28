@@ -27,12 +27,12 @@
   }
   &:hover {
     background: $btn-back-hover;
-    color: #fff;
-    border-color: #cd972f;
+    color: $btn-color-hover;
+    border-color: $btn-border-color-hover;
   }
   &:active {
-    border-color: #e7bd6d;
-    background: #e7bd6d;
+    border-color: $btn-border-color-active;
+    background: $btn-back-active;
   }
 
 }
@@ -54,13 +54,13 @@
   box-shadow: none !important;
 
   &:hover {
-    background: #1b5ef8;
-    color: #fff;
-    border-color: #1b5ef8;
+    background: $btn-back-hover5;
+    color: $btn-color-hover5;
+    border-color: $btn-border-color-hover5;
   }
   &:active {
-    border-color: #1747b2;
-    background: #1747b2;
+    border-color: $btn-border-color-active5;
+    background: $btn-back-active5;
   }
 
 }

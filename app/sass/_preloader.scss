@@ -5,7 +5,7 @@
   bottom: 0;
   right: 0;
   z-index: 10;
-  background: #fff;
+  background: $preloader-back;
 }
 .preloader > img {
   position: absolute;
@@ -42,8 +42,8 @@
     margin: -8px 0 0 -8px;
     width: 16px;
     height: 16px;
-    background: #e7bd6d;
-    border: 2px solid white;
+    background: $preloader-points-back;
+    border: 2px solid $preloader-points-border-color;
     border-radius: 16px;
     text-indent: -9999px;
     -webkit-transform: translate3d(60px, 0, 0);

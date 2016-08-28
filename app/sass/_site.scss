@@ -8,7 +8,7 @@
   @include main-font1();
   font-size: 16px;
   line-height: 28px;
-  color: #818193;
+  color: $site-color;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
 
@@ -38,21 +38,21 @@
 
     }
     .site__title {
-      color: #fff;
+      color: $site-index-dark-title-color;
     }
     .btn {
-      background: #f8ad1b;
-      border-color: #f8ad1b;
-      color: #fff;
+      background: $btn-back1;
+      border-color: $btn-border-color1;
+      color: $btn-color1;
 
       &:hover {
-        background: #cd972f;
-        color: #fff;
-        border-color: #cd972f;
+        background: $btn-back-hover;
+        color: $btn-color-hover;
+        border-color: $btn-border-color-hover;
       }
       &:active {
-        border-color: #e7bd6d;
-        background: #e7bd6d;
+        border-color: $btn-border-color-active;
+        background: $btn-back-active;
       }
 
     }
@@ -61,7 +61,7 @@
   .brand,
   .brand__label,
   .brand__designer {
-    background: #0a0a16;
+    background: $brand-index-dark-back;
   }
 
   .collection {
@@ -106,7 +106,7 @@
   &.site__header_fixed {
     position: fixed;
     height: 70px;
-    background: #fff;
+    background: $site-header-fixed-back;
 
     .site__header-inner {
       height: 70px;
@@ -139,7 +139,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: $site-menu-back;
   @include main-font6();
   text-align: center;
   -webkit-transition: opacity .3s ease, visibility .3s ease;
@@ -150,17 +150,17 @@
     margin: 0 0 64px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #0a0a16;
+    color: $site-menu-color;
     font-size: 13px;
     line-height: 17px;
     -webkit-transition: color 0.3s;
     transition: color 0.3s;
 
     &:hover {
-      color: #d9b26a;
+      color: $site-menu-color-hover;
     }
     &.active {
-      color: #d9b26a;
+      color: $site-menu-color-hover;
       cursor: default;
     }
 
@@ -200,7 +200,7 @@
     right: 0;
     width: 30px;
     height: 3px;
-    background: #000;
+    background: $site-header-btn-back;
     font-size: 0;
     -webkit-transition: background-color 0.3s;
     transition: background-color 0.3s;
@@ -213,7 +213,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #000;
+      background: $site-header-btn-back;
       content: '';
       -webkit-transition: -webkit-transform 0.3s, background .3s;
       transition: transform 0.3s, background .3s;
@@ -235,7 +235,7 @@
 
       &:before,
       &:after {
-        background: #6c6c6c;
+        background: $site-header-btn-back-active;
       }
       &:before {
         -webkit-transform: translateY(0) rotate(45deg);
@@ -258,7 +258,7 @@
   right: 0;
   bottom: 0;
   height: 360px;
-  background: #ffffff;
+  background: $site-footer-back;
   font-size: 14px;
   line-height: 20px;
 }
@@ -316,7 +316,7 @@
   line-height: 17px;
   text-transform: uppercase;
   @include main-font6();
-  color: #0a0a16;
+  color: $site-footer-title-color;
 }
 .site__footer-address {
 
@@ -325,7 +325,7 @@
     font-style: normal;
   }
   .site__footer-phone {
-    color: #e7bd6d;
+    color: $site-footer-phone-color;
   }
 
 }
@@ -339,16 +339,12 @@
 
     a {
       display: block;
-      color: #818193;
+      color: $site-footer-menu-color;
       -webkit-transition: color 0.3s;
       transition: color 0.3s;
 
       &:hover {
-        color: #d9b26a;
-      }
-      &.active {
-        color: #d9b26a;
-        cursor: default;
+        color: $site-footer-menu-color-hover;
       }
 
     }
@@ -360,7 +356,7 @@
   margin: 0 0 25px;
   font-size: 36px;
   line-height: 42px;
-  color: #0a0a16;
+  color: $site-title-color;
   @include main-font3();
 }
 .site__title_2 {
@@ -376,7 +372,7 @@
   margin: 0 0 26px;
   font-size: 30px;
   line-height: 40px;
-  color: #010101;
+  color: $site-title-color4;
   @include main-font4();
   letter-spacing: 0;
 }
