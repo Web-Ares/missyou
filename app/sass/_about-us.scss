@@ -12,7 +12,7 @@
   margin: 0 auto 30px;
 
   svg {
-    width: 300px;
+    width: 281px;
     height: 232px;
 
     g {
@@ -76,6 +76,11 @@
   }
   .about-us__pic {
     margin: 0;
+
+    svg {
+      width: 300px;
+    }
+
   }
   .about-us__text {
     padding: 0 0 8px;
