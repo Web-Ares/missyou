@@ -251,6 +251,22 @@
   }
 
 }
+.site__header-scroll-icon {
+  position: absolute;
+  width: 22px;
+  height: 28px;
+  bottom: 10px;
+  left: 50%;
+  cursor: pointer;
+  margin-left: -11px;
+  border: 3px solid #e7bd6d;
+  border-radius: 28px;
+  background: url("../img/start-block_after.png") no-repeat center;
+  -webkit-animation: spin-2 1s infinite linear;
+  -ms-animation: spin-2 1s infinite linear;
+  animation: spin-2 1s infinite linear;
+  z-index: 3;
+}
 .site__footer {
   position: absolute;
   z-index: 2;
@@ -695,3 +711,36 @@
   }
 }
 
+@-webkit-keyframes spin-2 {
+  0% {
+    background-position: center 3px;
+  }
+  50% {
+    background-position: center 8px;
+  }
+  100% {
+    background-position: center 3px;
+  }
+}
+@-ms-keyframes spin-2 {
+  0% {
+    background-position: center 3px;
+  }
+  50% {
+    background-position: center 8px;
+  }
+  100% {
+    background-position: center 3px;
+  }
+}
+@keyframes spin-2 {
+  0% {
+    background-position: center 3px;
+  }
+  50% {
+    background-position: center 8px;
+  }
+  100% {
+    background-position: center 3px;
+  }
+}

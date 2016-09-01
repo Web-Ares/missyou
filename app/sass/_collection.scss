@@ -59,6 +59,7 @@
     -webkit-transition: opacity 0.3s;
     transition: opacity 0.3s;
   }
+
   &:hover {
 
     &:after {
@@ -223,7 +224,17 @@
 
   }
 
+  .collection__previews-pic {
+
+    img {
+      width: auto;
+      max-height: 100%;
+    }
+
+  }
+
 }
+
 @media (min-width: $desktop) {
 
   .collection_3 {
@@ -320,15 +331,3 @@
 
 }
 
-@media (max-width: $tablet-landscape) {
-
-  .collection__previews-pic {
-
-    img {
-      width: auto;
-      max-height: 100%;
-    }
-
-  }
-
-}
