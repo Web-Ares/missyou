@@ -296,7 +296,7 @@
   width: 135px;
   height: 50px;
 
-  img {
+  img, svg {
     display: block;
     width: 100%;
     height: auto;
@@ -551,6 +551,7 @@
     left: auto;
     height: auto;
     padding-top: 0;
+    padding-right: 135px;
     background: transparent;
     text-align: right;
 

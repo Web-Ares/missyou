@@ -14,15 +14,17 @@
     var Slider = function (obj) {
 
         //private properties
-        var _self = this,
-            _obj = obj,
+        var _obj = obj,
             _slides = _obj.find( '.main-slider__slide'),
-            _window = $( window),
+            _window = $( window ),
+            _imgBottom = _obj.find( '.move-down' ),
+            _imgTop = _obj.find( '.move-top'),
+            _bottomStep = 5,
+            _topStep = 5,
             _swiper;
 
         //private methods
         var _onEvents = function () {
-
 
                 _window.on( {
                     resize: function() {
@@ -47,8 +49,30 @@
 
                         }
 
+                    },
+                    mousemove: function( e ){
+                        var pageX = e.pageX,
+                            pageY = e.pageY,
+                            halfWidth = _obj.width() / 2,
+                            halfHeight = _obj.height() / 2,
+                            percentFromCenterX = ( pageX - halfWidth ) / halfWidth,
+                            percentFromCenterY = ( pageY - halfHeight ) / halfHeight;
+
+                        console.log(_window.outerWidth())
+                        if ( _window.outerWidth() > 760 ) {
+
+                            _moveBottom( percentFromCenterX, percentFromCenterY );
+                            _moveTop( percentFromCenterX, percentFromCenterY );
+
+                        } else {
+                            _imgBottom.css( {
+                                '-webkit-transform': 'translate( 0, 0 )',
+                                'transform': 'translate( 0, 0 )'
+                            } );
+                        }
+
                     }
-                } )
+                } );
 
             },
             _initSwiper = function() {
@@ -57,7 +81,7 @@
                     pagination: '.swiper-pagination',
                     paginationClickable: true,
                     loop: true,
-                    autoplay: 5000,
+                    autoplay: false,
                     autoplayDisableOnInteraction: false,
                     effect: 'fade',
                     parallax: true,
@@ -127,9 +151,20 @@
                 } );
 
             },
+            _moveBottom = function( xPercent, yPercent ){
+                _imgBottom.css( {
+                    '-webkit-transform': 'translate( ' + -( xPercent * _bottomStep ) + 'px, ' + -( yPercent * _bottomStep ) + 'px )',
+                    'transform': 'translate( ' + -( xPercent * _bottomStep ) + 'px, ' + -( yPercent * _bottomStep ) + 'px )'
+                } );
+            },
+            _moveTop = function( xPercent, yPercent ){
+                _imgTop.css( {
+                    '-webkit-transform': 'translate( ' + ( xPercent * _topStep ) + 'px, ' + ( yPercent * _topStep ) + 'px )',
+                    'transform': 'translate( ' + ( xPercent * _topStep ) + 'px, ' + ( yPercent * _topStep ) + 'px )'
+                } );
+            },
             _init = function () {
 
-                _obj[0].obj = _self;
                 _onEvents();
                 _initSwiper();
 

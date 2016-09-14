@@ -11,6 +11,13 @@
 
         } );
 
+
+        $.each( $('.language'), function () {
+
+            new Language( $(this) );
+
+        } );
+
         $.each( $('.contact__google-map'), function () {
 
             new Location( $(this) );
@@ -108,6 +115,7 @@
                 if( direction > 0 && !_obj.hasClass( 'site__header_hidden' ) && !_menuBtn.hasClass( 'active' ) && _action ){
 
                     _obj.addClass( 'site__header_hidden' );
+                    $( '.language' ).removeClass( 'active' )
 
                 }
 
@@ -636,6 +644,52 @@
                 _addEvents();
 
             };
+
+        _init();
+    };
+
+    var Language = function (obj) {
+
+        //private properties
+        var _obj = obj,
+            _body = $( 'body'),
+            _btn = _obj.find( '.language__curent' );
+
+        //private methods
+        var _onEvents = function () {
+
+                _body.on({
+                    'click': function( e ) {
+                        _obj.removeClass( 'active' )
+                    }
+                })
+
+                _obj.on({
+                    'click': function( e ) {
+                        e.stopPropagation();
+                    }
+                })
+
+                _btn.on({
+                    'click': function( e ) {
+                        e.stopPropagation();
+
+                        if ( _obj.hasClass( 'active' ) ){
+                            _obj.removeClass( 'active' )
+                        } else {
+                            _obj.addClass( 'active' )
+                        }
+
+                    }
+                })
+
+            },
+            _init = function () {
+
+                _onEvents();
+
+            };
+
 
         _init();
     };

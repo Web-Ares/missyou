@@ -16,6 +16,7 @@
   text-transform: uppercase;
   -webkit-transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  z-index: 5;
 
   span {
     @include flexbox();
@@ -35,6 +36,9 @@
     background: $btn-back-active;
   }
 
+}
+.btn_1{
+  box-shadow: none!important;
 }
 .btn_2 {
   min-width: 101px;
