@@ -201,13 +201,25 @@
     //height: 960px;
   }
   .main-slider__pic {
+    background: none !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 
     img, svg {
       position: absolute;
       opacity: 1;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
     }
 
-
+    .move-down, .move-top{
+      -webkit-transform: translateX(  -50% ) translateY( -50% );
+      transform: translateX(  -50% ) translateY(  -50% );
+    }
   }
 
 }

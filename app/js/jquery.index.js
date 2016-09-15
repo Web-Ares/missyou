@@ -69,8 +69,8 @@
                             } else {
 
                                 _imgBottom.css( {
-                                    '-webkit-transform': 'translate( 0, 0 )',
-                                    'transform': 'translate( 0, 0 )'
+                                    '-webkit-transform': 'translate( -50%, -50% )',
+                                    'transform': 'translate( -50%, -50% )'
                                 } );
 
                             }
@@ -164,16 +164,16 @@
             _moveBottom = function( xPercent, yPercent ) {
 
                 _imgBottom.css( {
-                    '-webkit-transform': 'translate( ' + -( xPercent * _bottomStep ) + 'px, ' + -( yPercent * _bottomStep ) + 'px )',
-                    'transform': 'translate( ' + -( xPercent * _bottomStep ) + 'px, ' + -( yPercent * _bottomStep ) + 'px )'
+                    '-webkit-transform': 'translate( calc( -50% - ' + -( xPercent * _bottomStep ) + 'px ), calc( -50% - ' + -( yPercent * _bottomStep ) + 'px ) )',
+                    'transform': 'translate( calc( -50% - ' + -( xPercent * _bottomStep ) + 'px ), calc( -50% - ' + -( yPercent * _bottomStep ) + 'px ) )'
                 } );
 
             },
             _moveTop = function( xPercent, yPercent ) {
 
                 _imgTop.css( {
-                    '-webkit-transform': 'translate( ' + ( xPercent * _topStep ) + 'px, ' + ( yPercent * _topStep ) + 'px )',
-                    'transform': 'translate( ' + ( xPercent * _topStep ) + 'px, ' + ( yPercent * _topStep ) + 'px )'
+                    '-webkit-transform': 'translate( calc( -50% - ' + ( xPercent * _topStep ) + 'px ), calc( -50% - ' + ( yPercent * _topStep ) + 'px ) )',
+                    'transform': 'translate( calc( -50% - ' + ( xPercent * _topStep ) + 'px ), calc( -50% - ' + ( yPercent * _topStep ) + 'px ) )'
                 } );
 
             },
