@@ -1,0 +1,358 @@
+.boutiques {
+  position: relative;
+  z-index: 2;
+  padding: 40px 20px;
+  background: #f0f0f8;
+
+}
+.boutiques__inner {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+.boutiques__slider {
+  width: 100%;
+  height: 400px;
+
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    padding: 0 20px 60px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .swiper-pagination-bullets {
+    font-size: 24px;
+    line-height: 30px;
+    @include main-font4();
+    color: #ffffff;
+
+    .swiper-pagination-bullet {
+      display: inline-block;
+      vertical-align: bottom;
+      width: auto;
+      height: auto;
+      margin: 0 12px;
+      background: transparent;
+      opacity: 1;
+      -webkit-transition: padding-bottom 0.3s, color 0.3s, font-size 0.3s;
+      transition: padding-bottom 0.3s, color 0.3s, font-size 0.3s;
+    }
+    .swiper-pagination-bullet-active {
+      padding-bottom: 10px;
+      color: #e7bd6d;
+      font-size: 32px;
+      line-height: 36px;
+    }
+
+  }
+
+}
+.boutiques__text {
+  width: 100%;
+  max-width: 1355px;
+  margin: 0 auto;
+  padding: 18px 0 0;
+}
+.boutiques__address {
+  width: 200px;
+  padding: 36px 0;
+  color: #fff;
+  font-style: normal;
+  line-height: 30px;
+}
+.boutiques__phone {
+  display: inline-block;
+  vertical-align: top;
+  color: #e7bd6d;
+  @include main-font4();
+  font-size: 26px;
+  line-height: 30px;
+  cursor: default;
+  letter-spacing: 3.5px;
+}
+.boutiques__set {
+  width: 100%;
+  padding: 40px 30px;
+  background: #fff;
+}
+.boutiques__find {
+  padding: 0 0 30px;
+  border-bottom: 2px solid #f0f0f8;
+}
+.boutiques__countries {
+
+  li {
+    margin: 0 0 10px;
+
+    a {
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+      padding: 0 0 0 56px;
+      color: #999999;
+      @include main-font4();
+      font-size: 18px;
+      line-height: 22px;
+      -webkit-transition: color 0.3s;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #0a0a16;
+      }
+
+      &:before,
+      &:after {
+        position: absolute;
+        top: 50%;
+        left: 27px;
+        width: 10px;
+        height: 11px;
+        background: url("../img/pagination-triangle.png") no-repeat;
+        background-size: contain;
+        content: '';
+        -webkit-transform: translateY(-50%) rotate(180deg);
+        transform: translateY(-50%) rotate(180deg);
+      }
+      &:before {
+        opacity: 0;
+        visibility: hidden;
+        z-index: 2;
+        left: 0;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        background: url("../img/pagination-triangle-active.png") no-repeat;
+        background-size: contain;
+      }
+
+      &.active {
+        color: #0a0a16;
+
+        &:before {
+          opacity: 1;
+          visibility: visible;
+          -webkit-transform: translateY(-50%) rotate(180deg) translateX(-28px);
+          transform: translateY(-50%) rotate(180deg) translateX(-28px);
+        }
+        &:after {
+          width: 28px;
+          height: 3px;
+          left: 0;
+          background: $swiper-pagination-text-after-back;
+          -webkit-transform: translateY(-50%) rotate(360deg);
+          transform: translateY(-50%) rotate(360deg);
+        }
+
+      }
+
+    }
+
+  }
+
+}
+.boutiques__countries-title {
+  padding: 0 0 30px;
+  margin: 0 0 20px;
+  @include main-font4();
+  font-size: 20px;
+  line-height: 32px;
+  color: #010101;
+}
+.boutiques__shops {
+  padding: 30px 0 0;
+}
+.boutiques__shops-item {
+  margin: 0 0 15px;
+
+  a {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    padding: 0 0 0 20px;
+    color: #999999;
+    @include main-font4();
+    font-size: 20px;
+    line-height: 30px;
+    -webkit-transition: color 0.3s;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #0a0a16;
+    }
+
+  }
+
+  &.active {
+
+    a {
+      color: #0a0a16;
+    }
+
+  }
+
+}
+
+@media (min-width: $desktop) {
+
+  .boutiques {
+    padding: 40px 40px 0;
+  }
+  .boutiques__inner {
+    @include flexbox();
+    @include flex-direction(column-reverse);
+    @include align-items(flex-start);
+    @include justify-content(flex-start);
+  }
+  .boutiques__slider {
+    height: 500px;
+
+    .swiper-pagination-bullets {
+      text-align: left;
+      max-width: 1340px;
+      margin: 0 auto;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 10.1%;
+      font-size: 30px;
+      line-height: 40px;
+
+      .swiper-pagination-bullet-active {
+        padding-bottom: 13px;
+        font-size: 48px;
+        line-height: 50px;
+      }
+
+    }
+    .swiper-slide {
+      padding: 60px 20px;
+      @include flexbox();
+      @include flex-direction();
+      @include align-items(center);
+      @include justify-content(flex-start);
+    }
+
+  }
+  .boutiques__text {
+    @include flexbox();
+    @include flex-direction();
+    @include align-items(flex-start);
+    @include justify-content(flex-start);
+
+    >div {
+      width: 47%;
+      padding-top: 12px;
+
+      &:first-child {
+        padding-top: 0;
+        padding-right: 20px;
+      }
+
+    }
+
+  }
+  .boutiques__phone {
+    font-size: 36px;
+    line-height: 40px;
+  }
+  .boutiques__set {
+    margin: -200px 0 0 auto;
+    z-index: 2;
+    position: relative;
+    width: 560px;
+
+
+  }
+  .boutiques__countries {
+
+    li {
+
+      a {
+        font-size: 24px;
+        line-height: 28px;
+
+      }
+
+    }
+
+  }
+  .boutiques__countries-title {
+    font-size: 30px;
+    line-height: 42px;
+    padding: 0 0 0 57px;
+    margin: 0 0 85px;
+  }
+  .boutiques__shops-item {
+    margin: 0 0 25px;
+
+    a {
+      padding: 0 0 0 40px;
+      font-size: 36px;
+      line-height: 40px;
+
+      &:hover {
+        color: #0a0a16;
+      }
+
+    }
+  }
+}
+@media (min-width: $desktop-wide1) {
+
+  .boutiques__slider {
+    height: 800px;
+
+    .swiper-pagination-bullets {
+      bottom: 19.1%;
+    }
+
+  }
+  .boutiques__set {
+    padding: 109px 26px 60px 62px;
+    margin: -391px 0 0 auto;
+    @include flexbox();
+    @include flex-direction();
+    @include align-items(flex-end);
+    @include justify-content(flex-start);
+    width: 58.7%;
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 51.7%;
+      width: 2px;
+      height: 100%;
+      background: #f0f0f8;
+      content: '';
+    }
+
+    >div {
+      width: 50%;
+
+      &:first-child {
+        padding: 0 90px 37px 0;
+      }
+
+    }
+
+
+  }
+  .boutiques__find {
+    border-bottom: none;
+    padding: 0;
+  }
+
+}
+@media (min-width: $desktop-full) {
+
+  .boutiques {
+
+  }
+  .boutiques__slider {
+    height: 800px;
+  }
+
+}
+

@@ -9,7 +9,8 @@
 
     <title>Title</title>
 
-    <link rel="stylesheet" href="css/collections-page.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/boutiques-page.css">
     <style>
         .preloader{
             position: fixed;
@@ -295,9 +296,9 @@
 
                 <!-- site__menu -->
                 <nav class="site__menu">
-                    <a href="#" class="active">Collection</a>
+                    <a href="#">Collection</a>
                     <a href="#">About</a>
-                    <a href="#">Boutiques</a>
+                    <a href="#" class="active">Boutiques</a>
                     <a href="#">Contact</a>
                 </nav>
                 <!-- /site__menu -->
@@ -376,12 +377,12 @@
         <div class="site__content">
 
             <!-- hero -->
-            <div class="hero" style="background-image: url('pic/collections-bg.jpg')">
+            <div class="hero">
 
                 <!-- site__content-inner -->
                 <div class="site__content-inner">
 
-                    <h1 class="site__title site__title_2">Collection</h1>
+                    <h1 class="site__title site__title_2">Boutiques</h1>
 
                 </div>
                 <!-- /site__content-inner -->
@@ -389,84 +390,132 @@
             </div>
             <!-- /hero -->
 
-            <!-- collection-previews -->
-            <section class="collection-previews animate-block">
+            <!-- boutiques -->
+            <div class="boutiques animate-block">
 
-                <!-- collection-previews__inner -->
-                <div class="collection-previews__inner">
+				<!-- boutiques__inner -->
+				<div class="boutiques__inner">
 
-                    <!-- collection-previews__items -->
-                    <div class="collection-previews__items">
-                        <div>
+					<!-- boutiques__set -->
+					<div class="boutiques__set">
 
-                            <!-- collection-previews__item -->
-                            <a href="#" class="collection-previews__item collection-previews__item_main">
+						<!-- boutiques__find -->
+						<div class="boutiques__find">
 
-                                <!-- collection-previews__items-pic -->
-                                <div class="collection-previews__items-pic">
-                                    <img src="pic/collection5.jpg" width="494" height="573" alt="">
-                                </div>
-                                <!-- /collection-previews__items-pic -->
+							<h2 class="boutiques__countries-title">See where you can find
+								our latest collection shop</h2>
 
-                                <span class="collection-previews__items-name">Pivoine</span>
+							<!-- boutiques__countries -->
+							<ul class="boutiques__countries" data-action="php/boutiques.php">
+								<li>
+									<a class="active" href="#" data-id="1">Belgium</a>
+								</li>
+								<li>
+									<a href="#" data-id="2">Netherlands</a>
+								</li>
+							</ul>
+							<!-- /boutiques__countries -->
 
-                            </a>
-                            <!-- /collection-previews__item -->
+						</div>
+						<!-- /boutiques__find -->
 
-                        </div>
-                        <div>
+						<!-- boutiques__shops -->
+						<div class="boutiques__shops">
 
-                            <!-- collection-previews__item -->
-                            <a href="#" class="collection-previews__item collection-previews__item_vertical">
+							<div class="boutiques__shops-item active">
+								<a href="#">Boutique Tollet</a>
+							</div>
+							<div class="boutiques__shops-item">
+								<a href="#">Diamond Plaza building</a>
+							</div>
 
-                                <!-- collection-previews__items-pic -->
-                                <div class="collection-previews__items-pic">
-                                    <img src="pic/collection6.jpg" width="440" height="205" alt="">
-                                </div>
-                                <!-- /collection-previews__items-pic -->
+						</div>
+						<!-- /boutiques__shops -->
 
-                                <span class="collection-previews__items-name">Liaison</span>
+					</div>
+					<!-- /boutiques__set -->
 
-                            </a>
-                            <!-- /collection-previews__item -->
+					<!-- boutiques__slider -->
+					<div class="boutiques__slider">
 
-                            <!-- collection-previews__item -->
-                            <a href="#" class="collection-previews__item">
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide" style="background-image: url(pic/boutique1.jpg)">
 
-                                <!-- collection-previews__items-pic -->
-                                <div class="collection-previews__items-pic">
-                                    <img src="pic/collection7.jpg" width="430" height="283" alt="">
-                                </div>
-                                <!-- /collection-previews__items-pic -->
+									<!-- boutiques__text -->
+									<div class="boutiques__text">
+										<div>
 
-                                <span class="collection-previews__items-name">La Rosé</span>
+											<h2 class="site__title site__title_white">Boutique Tollet</h2>
 
-                            </a>
-                            <!-- /collection-previews__item -->
+											<!-- boutiques__address -->
+											<address class="boutiques__address">
+												<p>Rue des Fripiers 36</p>
+												<p>1000 Bruxelles</p>
+												<p>Belgium</p>
+											</address>
+											<!-- /boutiques__address -->
 
-                            <!-- collection-previews__item -->
-                            <a href="#" class="collection-previews__item">
+										</div>
+										<div>
 
-                                <!-- collection-previews__items-pic -->
-                                <div class="collection-previews__items-pic" >
-                                    <img src="pic/collection9.jpg" width="242" height="187" alt="">
-                                </div>
-                                <!-- /collection-previews__items-pic -->
+											<a class="boutiques__phone" href="tel:+3232943996">+32 3 294 3996</a>
 
-                                <span class="collection-previews__items-name">Edelweiss</span>
+										</div>
+									</div>
+									<!-- /boutiques__text -->
 
-                            </a>
-                            <!-- /collection-previews__item -->
+								</div>
+								<div class="swiper-slide" style="background-image: url(pic/boutique1.jpg)">
 
-                        </div>
-                    </div>
-                    <!-- collection-previews__items -->
+									<!-- boutiques__text -->
+									<div class="boutiques__text">
+										<div>
 
-                </div>
-                <!-- /collection-previews__inner -->
+											<h2 class="site__title site__title_white">Diamond Plaza building</h2>
 
-            </section>
-            <!-- /collection-previews -->
+											<!-- boutiques__address -->
+											<address class="boutiques__address">
+												<p>Rue des Fripiers 36</p>
+												<p>1000 Bruxelles</p>
+												<p>Belgium</p>
+											</address>
+											<!-- /boutiques__address -->
+
+										</div>
+										<div>
+
+											<a class="boutiques__phone" href="tel:+3232943996">+32 3 294 3996</a>
+
+										</div>
+									</div>
+									<!-- /boutiques__text -->
+
+								</div>
+							</div>
+							<!-- Add Pagination -->
+							<div class="swiper-pagination"></div>
+						</div>
+
+
+					</div>
+					<!-- /boutiques__slider -->
+
+				</div>
+				<!-- /boutiques__inner -->
+
+				<!-- preloader-ajax -->
+				<div class="preloader-ajax">
+					<div class='preloader__points'>
+						<span>.</span>
+						<span>.</span>
+						<span>.</span>
+					</div>
+				</div>
+				<!-- /preloader-ajax -->
+
+            </div>
+            <!-- /boutiques -->
 
         </div>
         <!-- /site__content -->
@@ -479,7 +528,7 @@
 
                 <!-- site__footer-logo -->
                 <a href="#" class="site__footer-logo">
-                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    <svg version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="262.978px" height="65.359px" viewBox="0 0 262.978 65.359" enable-background="new 0 0 262.978 65.359"
 	 xml:space="preserve">
 <g>
@@ -626,6 +675,7 @@
     <!-- /site -->
 
     <script src="js/vendors/jquery-2.2.1.min.js"></script>
+    <script src="js/vendors/swiper.jquery.min.js"></script>
     <script src="js/main.min.js"></script>
 </body>
 </html>

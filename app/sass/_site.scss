@@ -374,6 +374,11 @@
   line-height: 42px;
   color: $site-title-color;
   @include main-font3();
+
+  &.site__title_white {
+    color: #fff;
+  }
+
 }
 .site__title_2 {
   font-size: 42px;

@@ -11,7 +11,6 @@
 
         } );
 
-
         $.each( $('.language'), function () {
 
             new Language( $(this) );
@@ -21,6 +20,12 @@
         $.each( $('.contact__google-map'), function () {
 
             new Location( $(this) );
+
+        } );
+
+        $.each( $('.boutiques'), function () {
+
+            new BoutiquesSlider( $(this) );
 
         } );
 
@@ -39,17 +44,22 @@
 
                 _window.on( {
                     load: function(){
+
                         _showSite();
+
                     }
                 } );
 
             },
             _init = function () {
+
                 _body[0].preloader = _self;
                 _addEvents();
+
             },
-            _showSite = function(){
-                _preloader.addClass('preloader_loaded');
+            _showSite = function() {
+
+                _preloader.addClass( 'preloader_loaded' );
 
                 setTimeout(function(){
                     _preloader.remove();
@@ -60,23 +70,6 @@
                         new Slides( $(this) );
 
                     } );
-                    //$.each( $('.collection'), function () {
-                    //
-                    //    new Collections( $(this) );
-                    //
-                    //} );
-                    //
-                    //$.each( $('.collection-previews'), function () {
-                    //
-                    //    new Collections( $(this) );
-                    //
-                    //} );
-                    //
-                    //$.each( $('.collection-single'), function () {
-                    //
-                    //    new Collections( $(this) );
-                    //
-                    //} );
 
                 },500);
             };
@@ -105,6 +98,7 @@
 
                 _menuBtn.removeClass( 'active' );
                 _menu.removeClass( 'opened' );
+
                 $('html').css( {
                     'overflow-y': 'scroll'
                 } );
@@ -190,25 +184,6 @@
                         }
 
                     }
-                    //,
-                    //'touchmove': function ( e ) {
-                    //
-                    //    var currentPos = e.originalEvent.touches[0].clientY;
-                    //
-                    //    if ( currentPos > _lastPos ) {
-                    //
-                    //        _checkScroll( -1 );
-                    //
-                    //
-                    //    } else if ( currentPos < _lastPos ) {
-                    //
-                    //        _checkScroll( 1 );
-                    //
-                    //    }
-                    //
-                    //    _lastPos = currentPos;
-                    //
-                    //}
 
                 } );
 
@@ -659,29 +634,33 @@
         var _onEvents = function () {
 
                 _body.on({
-                    'click': function( e ) {
+                    'click': function() {
                         _obj.removeClass( 'active' )
                     }
-                })
+                } );
 
                 _obj.on({
                     'click': function( e ) {
                         e.stopPropagation();
                     }
-                })
+                } );
 
                 _btn.on({
                     'click': function( e ) {
                         e.stopPropagation();
 
                         if ( _obj.hasClass( 'active' ) ){
+
                             _obj.removeClass( 'active' )
+
                         } else {
+
                             _obj.addClass( 'active' )
+
                         }
 
                     }
-                })
+                } );
 
             },
             _init = function () {
@@ -690,6 +669,172 @@
 
             };
 
+
+        _init();
+    };
+
+    var BoutiquesSlider = function (obj) {
+
+        //private properties
+        var _obj = obj,
+            _slider = _obj.find('.boutiques__slider'),
+            _shopsSet = _obj.find('.boutiques__shops'),
+            _shopsBtns = _obj.find('.boutiques__shops-item'),
+            _countriesSet = _obj.find('.boutiques__countries'),
+            _window = $( window ),
+            _swiper,
+            _proloading = slider = _obj.find('.preloader-ajax'),
+            _request = new XMLHttpRequest();
+
+        //private methods
+        var _addPreloading = function() {
+
+                _proloading.addClass('visible');
+
+            },
+            _deletePreloading = function() {
+
+                _proloading.removeClass('visible');
+
+            },
+            _onEvents = function () {
+
+                $('body').on( 'click', '.boutiques__shops-item a', function() {
+
+                    var curElem = $(this),
+                        curElemParent = curElem.parent(),
+                        curElemIndex = curElemParent.index();
+
+                    $('.boutiques__shops-item').removeClass('active');
+                    curElemParent.addClass('active');
+                    _swiper.slideTo(curElemIndex, 500, true);
+
+                    return false;
+
+                } );
+
+                _countriesSet.find('a').on( {
+                    click: function() {
+
+                        var curElem = $(this);
+
+                        _countriesSet.find('a').removeClass('active');
+                        curElem.addClass('active');
+                        _addPreloading();
+
+                        setTimeout( function() {
+                            _swiper.destroy( true, true );
+                            _requestContent( curElem );
+
+                        }, 400 );
+
+                        return false;
+
+                    }
+                } );
+
+                _window.on( {
+                    resize: function() {
+
+
+                    },
+                    load: function() {
+
+
+                    }
+                } );
+
+            },
+            _initSwiper = function() {
+
+                _swiper = new Swiper( _slider.find( '.swiper-container' ), {
+                    pagination: '.swiper-pagination',
+                    //loop: true,
+                    paginationClickable: true,
+                    paginationBulletRender: function ( index, className ) {
+
+                        return '<span class="' + className + '">' + (index + 1) + '</span>';
+
+                    },
+                    onSlideChangeStart: function(swiper) {
+                        $('.boutiques__shops-item').removeClass('active');
+                        $('.boutiques__shops-item').eq(swiper.activeIndex).addClass('active');
+                    }
+                } );
+
+            },
+            _init = function () {
+
+                _onEvents();
+                _initSwiper();
+
+            },
+            _requestContent = function ( elem ) {
+
+                _request.abort();
+
+                _request = $.ajax( {
+                    url: _countriesSet.attr('data-action'),
+                    data: {
+                        id: elem.attr('data-id')
+                    },
+                    dataType: 'json',
+                    type: "get",
+                    success: function (m) {
+
+                        _shopsSet.html('');
+                        _slider.find('.swiper-wrapper').html('');
+
+                        for( var i=0; i < m.boutiqueNames.length; i++ ) {
+
+                            _shopsSet.html( function() {
+                                $(this).append('<div class="boutiques__shops-item"><a href="#">'+ m.boutiqueNames[i] +'</a></div>')
+                            } );
+
+                        }
+                        _shopsSet.find('.boutiques__shops-item').eq(0).addClass('active');
+
+
+
+                        $.each( m.sliders, function() {
+
+                            var cur = this;
+
+                            _slider.find('.swiper-wrapper').html( function() {
+                                $(this).append('<div class="swiper-slide" style="background-image: url('+cur.background+')">' +
+                                        '<div class="boutiques__text">\
+                                                <div>\
+                                                    <h2 class="site__title site__title_white">'+ cur.title +'</h2>\
+                                                    <address class="boutiques__address">'+ cur.address +'</address>\
+                                                </div>\
+                                                <div>\
+                                                    <a class="boutiques__phone" href="tel:'+ cur.phone +'">'+ cur.phone +'</a>\
+                                                </div>\
+                                        </div>' +
+                                    '</div>')
+                            } );
+
+                        } );
+
+
+
+                        setTimeout( function() {
+
+                            _deletePreloading();
+                            _initSwiper();
+
+                        }, 500 );
+
+
+                    },
+                    error: function (XMLHttpRequest) {
+                        if ( XMLHttpRequest.statusText != "abort" ) {
+                            alert("ERROR!!!");
+                        }
+                    }
+                } );
+
+            };
 
         _init();
     };
