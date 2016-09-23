@@ -21,7 +21,9 @@
             _imgTop = _obj.find( '.move-top'),
             _bottomStep = 5,
             _topStep = 5,
-            _swiper;
+            _swiper,
+            _x = -0.5,
+            _y = -0.4;
 
         //private methods
         var _onEvents = function () {
@@ -39,9 +41,27 @@
 
                         }
 
+                        // if (_window.width() < 1024) {
+                        //
+                        //     _imgBottom.css( {
+                        //         '-webkit-transform': 'translate( -50%, -50% )',
+                        //         'transform': 'translate( -50%, -50% )'
+                        //     } );
+                        //     _imgTop.css( {
+                        //         '-webkit-transform': 'translate( -50%, -50% )',
+                        //         'transform': 'translate( -50%, -50% )'
+                        //     } );
+                        // }
 
                     },
                     load: function() {
+
+                        if( _window.width() > 1024 ) {
+
+                            _moveBottom( _x, _y );
+                            _moveTop( _x, _y );
+
+                        }
 
                         if( _window.height() < 850 ) {
 
@@ -53,6 +73,8 @@
                     mousemove: function( e ){
 
                         if( _window.width()>1024 ) {
+
+                            // console.log("mousemove");
 
                             var pageX = e.pageX,
                                 pageY = e.pageY,
@@ -76,8 +98,6 @@
                             }
 
                         }
-
-
 
                     }
                 } );
@@ -103,6 +123,8 @@
                             names.push( $(this).data('name') );
 
                         } );
+
+                        console.log(names);
 
                         var text = '<div class="swiper-pagination__text">';
 
