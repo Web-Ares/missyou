@@ -108,13 +108,13 @@
                 _swiper = new Swiper( _obj.find( '.swiper-container' ), {
                     pagination: '.swiper-pagination',
                     paginationClickable: true,
-                    loop: true,
+                    // loop: true,
                     autoplay: false,
                     autoplayDisableOnInteraction: false,
                     effect: 'fade',
                     parallax: true,
-                    paginationType: 'custom',
-                    paginationCustomRender: function( swiper, current, total ) {
+                    // paginationType: 'bullet',
+                    paginationBulletRender: function( index, className, swiper ) {
 
                         var names = [];
 
@@ -124,30 +124,42 @@
 
                         } );
 
-                        console.log(names);
-
-                        var text = '<div class="swiper-pagination__text">';
-
-                        for ( var i = 1; i <= total; i++ ) {
-
-                            if ( current == i ) {
-
-                                text += '<span class="active"><span>' + names[i] + '</span></span>';
-
-                            } else {
-
-                                text += '<span><span>' + names[i] + '</span></span>';
-
-                            }
-
-                        }
-
-                        text += '</div>';
-
-                        return text;
+                        return '<span class="' + className + '"><span>' + names[index] + '</span></span>';
 
                     }
                 } );
+
+                // paginationCustomRender: function( swiper, current, total ) {
+                //
+                //     var names = [];
+                //
+                //     $( '.swiper-wrapper .swiper-slide' ).each( function(i) {
+                //
+                //         names.push( $(this).data('name') );
+                //
+                //     } );
+                //
+                //     var text = '<div class="swiper-pagination__text">';
+                //
+                //     for ( var i = 1; i <= total; i++ ) {
+                //
+                //         if ( current == i ) {
+                //
+                //             text += '<span class="active"><span>' + names[i] + '</span></span>';
+                //
+                //         } else {
+                //
+                //             text += '<span><span>' + names[i] + '</span></span>';
+                //
+                //         }
+                //
+                //     }
+                //
+                //     text += '</div>';
+                //
+                //     return text;
+                //
+                // }
 
                 _slides = _obj.find( '.main-slider__slide');
 
