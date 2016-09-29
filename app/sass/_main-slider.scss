@@ -117,11 +117,10 @@
           right: 0;
           width: 10px;
           height: 11px;
+          margin-top: -5.5px;
           background: url("../img/pagination-triangle.png") no-repeat;
           background-size: contain;
           content: '';
-          -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
           -webkit-transition: all .3s linear;
           transition: all .3s linear;
 
@@ -130,6 +129,7 @@
           opacity: 0;
           visibility: hidden;
           z-index: 2;
+          margin-top: -5.5px;
           background: url("../img/pagination-triangle-active.png") no-repeat;
           background-size: contain;
         }
@@ -138,12 +138,15 @@
           &:before {
             opacity: 1;
             visibility: visible;
-            -webkit-transform: translateY(-50%) rotate(360deg) translateX(-28px);
-            transform: translateY(-50%) rotate(360deg) translateX(-28px);
+            -webkit-transform: translateX(-28px);
+            transform: translateX(-28px);
           }
           &:after {
+            opacity: 1 !important;
+            visibility: visible !important;
             width: 28px;
             height: 3px;
+            margin-top: -1.5px;
             background: $swiper-pagination-text-after-back;
           }
           >span {
@@ -153,7 +156,23 @@
             transform: translateX(0px);
           }
         }
+        &:hover {
 
+          &:before {
+            opacity: 1;
+            visibility: visible;
+          }
+          &:after {
+            opacity: 0;
+            visibility: hidden;
+          }
+          >span {
+            opacity: 1;
+            visibility: visible;
+            -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+          }
+        }
         >span {
           opacity: 0;
           visibility: hidden;
@@ -162,7 +181,6 @@
           transform: translateX(-30px);
           -webkit-transition: all .3s linear;
           transition: all .3s linear;
-
         }
       }
     }
